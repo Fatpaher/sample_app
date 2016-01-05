@@ -36,7 +36,7 @@ describe "Authentication" do
           it { should_not have_link('Sign in', href: signin_path) }
 
       describe "folllowed by signout" do
-        before { click_link "Sign Out" }
+        before { click_link "Sign out" }
         it { should have_link ('Sign in') }
       end
     end
@@ -83,7 +83,7 @@ describe "Authentication" do
 
       describe "submitting a DELETE request to the User#destroy action" do
         before {delete user_path(user) }
-        specify {expect(response.to redirect_to(root_url)) }
+        specify {expect(response.should redirect_to(root_url)) }
       end
     end
   end
